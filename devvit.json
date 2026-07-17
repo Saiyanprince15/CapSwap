@@ -1,0 +1,45 @@
+{
+  "$schema": "https://developers.reddit.com/schema/config-file.v1.json",
+  "name": "capswap",
+  "post": {
+    "dir": "dist/client",
+    "entrypoints": {
+      "default": {
+        "inline": true,
+        "entry": "game.html"
+      }
+    }
+  },
+  "server": {
+    "dir": "dist/server",
+    "entry": "index.cjs"
+  },
+  "menu": {
+    "items": [
+      {
+        "label": "Create CapSwap Game",
+        "description": "Create a new CapSwap post — an 8-bit bottle sorting puzzle",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/post-create"
+      },
+      {
+        "label": "Example form",
+        "description": "Show a simple form",
+        "location": "subreddit",
+        "forUserType": "moderator",
+        "endpoint": "/internal/menu/example-form"
+      }
+    ]
+  },
+  "forms": {
+    "exampleForm": "/internal/form/example-submit"
+  },
+  "triggers": {
+    "onAppInstall": "/internal/triggers/on-app-install"
+  },
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  }
+}
